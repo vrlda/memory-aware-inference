@@ -2,6 +2,26 @@
 
 Terminal-first research harness for measuring Super-Inference memory/throughput experiments.
 
+## At a glance
+
+Super-Inference explores how to run large local language models under a deliberately
+constrained GPU-memory budget while preserving exact greedy behavior from the
+untouched target model.
+
+| Area | Status |
+| --- | --- |
+| Rust runtime | Working |
+| Metal kernels | Working |
+| Safetensors | Working |
+| GGUF / Q4_K and related formats | Working |
+| Qwen3-4B | End-to-end |
+| Qwen3.6-27B | Active development |
+| Research benchmark suite | Reproducible |
+
+The project is an experimental inference engine, not a finished drop-in
+replacement for llama.cpp. The research record below documents what works,
+what does not, and why.
+
 Research contracts and implementation stages live in [`docs/`](docs/), beginning
 with [SI-001](docs/SI-001-benchmark-spec.md), [SI-002](docs/SI-002-direct-metal-runtime-spec.md),
 [SI-003](docs/SI-003-memory-planner-spec.md), and

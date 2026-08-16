@@ -1,0 +1,35 @@
+{
+  "model_path": "models/qwen3-4b-base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "backend": "metal-streaming",
+  "device": "Apple M3 Pro",
+  "prompt": "Explain why memory paging is useful for local model inference.",
+  "generated_tokens": 128,
+  "warmup_runs": 1,
+  "repetitions": 3,
+  "retain_layers": 8,
+  "feature": "SI_VERIFY_MANY=1, SI_LOOKAHEAD=1, SI_LOOKAHEAD_WIDTH=8, SI_LOOKAHEAD_ITERS=1",
+  "candidate_forward_control": {
+    "batch_8_tok_s": 16.622,
+    "greedy_ids_match": true,
+    "max_abs_logit_diff": 0.000017
+  },
+  "end_to_end": {
+    "decode_tok_s": 1.700,
+    "total_tok_s": 1.752,
+    "peak_vram_mib": 1544,
+    "peak_ram_mib": 1119,
+    "greedy_ids_match_target_only_reference": true,
+    "promotion": "rejected"
+  },
+  "target_only_reference": {
+    "decode_tok_s": 2.102,
+    "total_tok_s": 2.100,
+    "peak_vram_mib": 1540,
+    "peak_ram_mib": 1609,
+    "warmup_runs": 0,
+    "repetitions": 1
+  },
+  "si001_baseline_decode_tok_s": 4.607,
+  "interpretation": "Exact K=8 fused projection throughput does not translate into a promoted generation baseline because the Jacobi scheduler accepts too few candidates and still performs expensive proposal passes."
+}

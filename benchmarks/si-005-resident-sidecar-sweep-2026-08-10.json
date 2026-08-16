@@ -1,0 +1,20 @@
+{
+  "experiment": "resident-layer-low-rank-sidecar",
+  "date": "2026-08-10",
+  "model": "Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "device": "Apple M3 Pro",
+  "trace_records": 192,
+  "train_records": 154,
+  "holdout_records": 38,
+  "ridge": 0.01,
+  "target_unchanged": true,
+  "proposal_only": true,
+  "results": [
+    {"rank": 32, "sidecar_bytes": 10705422, "score_ms_per_holdout": 0.1193, "target_top1_in_sidecar_top4": 0.2105, "target_top4_overlap": 0.4474, "report": "si-005-resident-sidecar-r32.json"},
+    {"rank": 64, "sidecar_bytes": 21084686, "score_ms_per_holdout": 0.2064, "target_top1_in_sidecar_top4": 0.2895, "target_top4_overlap": 0.5789, "report": "si-005-resident-sidecar-r64.json"},
+    {"rank": 128, "sidecar_bytes": 41843214, "score_ms_per_holdout": 0.3419, "target_top1_in_sidecar_top4": 0.4211, "target_top4_overlap": 0.6842, "report": "si-005-resident-sidecar-r128.json"}
+  ],
+  "promotion": "rejected_for_scheduler",
+  "interpretation": "The low-rank adapter learns useful signal from the eight-layer hidden state, but current held-out coverage is too low for speculative promotion: even rank 128 places the target top-1 in its four proposals only 42.1% of the time. The artifact is a valid sidecar baseline; more diverse traces and a stronger nonlinear adapter are required before integrating verification or dynamic K."
+}

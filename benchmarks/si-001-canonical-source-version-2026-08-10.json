@@ -1,0 +1,76 @@
+{
+  "spec": "SI-001",
+  "purpose": "Source and executable identity for the first 4.607 tok/s canonical run",
+  "historical_run": {
+    "completed_utc": "2026-08-09T12:11:06.380Z",
+    "completed_local": "2026-08-09T17:11:06.380+05:00",
+    "decode_tok_s": 4.607,
+    "total_tok_s": 4.624,
+    "prefill_tok_s": 4.808,
+    "peak_metal_mib": 1540,
+    "peak_rss_mib": 576,
+    "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539"
+  },
+  "historical_command": "target/release/si-bench --model models/qwen3-4b-base --backend metal-streaming --prompt 'Explain why memory paging is useful for local model inference.' --max-tokens 128 --context 2048 --warmup 1 --repetitions 3 --retain-layers 8 --output json",
+  "source_boundary": {
+    "release_build_utc": "2026-08-09T12:05:34Z",
+    "first_post_run_si004_patch_utc": "2026-08-09T13:02:19.450Z",
+    "historical_binary_path": "target/release/si-bench",
+    "historical_binary_fingerprint_captured": false,
+    "historical_library_fingerprint_captured": false,
+    "note": "The original tree has no Git repository and the exact first-run binary was not preserved. The defensible source identity is the release build at 12:05:34Z, before the first post-run SI-004 patch at 13:02:19.450Z, together with the exact command, model revision, and run record.",
+    "later_control_binary": {
+      "fingerprint": "super-inference-de8895d91c3ac07f",
+      "path": "target/release/deps/si_bench-de8895d91c3ac07f",
+      "mtime_local": "2026-08-09 21:07:33",
+      "relation_to_first_run": "Built after the first 4.607 run at 17:11:06 local and before a later duplicate 4.607 capture; it is not proof of the first-run executable."
+    }
+  },
+  "source_replay": {
+    "method": "Forward replay of the session's successful patch_apply_end events from initial file creation through the historical release-build boundary, with every historical cargo fmt write transition replayed in timestamp order.",
+    "session_log": "/Users/danilrybalkin/.codex/sessions/2026/08/08/rollout-2026-08-08T15-37-53-019fe0f3-5f2e-7d40-8132-c77be979f8ba.jsonl",
+    "patch_events_considered": 345,
+    "source_patch_changes_applied": 303,
+    "cargo_fmt_transitions_replayed": 81,
+    "replay_failures": 0,
+    "tracked_source_matches_workspace": true,
+    "tracked_files": {
+      "Cargo.toml": "081aac801296f7c0b8a5f25b0dfecb82dff28be44067fd9be91faa0919cba52c",
+      "src/bin/si-metal-probe.rs": "c889e905cf9bd417e0c0cd8c8ff98ab773a1ec14ce4016011b9f4c250cda776f",
+      "src/bin/si-pack-model.rs": "0c800ed1c89f668a93a543f51b5caf0f0ff1d40f5619c302c2ee0f4e386696e9",
+      "src/cache.rs": "3c247f8dc02e03f6f03620327b2f0d9af32e9292516f7eeed9db4404e15b95c6",
+      "src/lib.rs": "971613df443f5e80e8894b2db660cbca2ac410997d02e98e275785080a833766",
+      "src/main.rs": "9ff006bdbeb2c879c5584431911b387d6936abbdba326952a4f57aa7d23a1e7e",
+      "src/metal.rs": "475da5e8f9447d774adef12fb6eb5efb2f6e559d21295bbeb5c4ada0508b166e",
+      "src/model.rs": "f76ecf4d4f236ad4c8d8a2d9b8a721da033297842c92066e7682484f314c8ad3",
+      "src/planner.rs": "c98a0d3296312960e65547be0c10cb1ad11251f9e870b2fa34c6a527f9467e1a",
+      "src/quality.rs": "be5fec766d8f983d4c8c5192d19b095e52a82d2b6f3a1ec4f441b1a22752392d",
+      "src/runtime.rs": "e3e1348be241cda80ff6eb05e44085e7cc3492bb7a91724d6ad2cfd80144852d",
+      "src/telemetry.rs": "9b55b7c0d763b1b288fe4b6aa46827656cfe41800554184e9e6e2f334fdabc28",
+      "src/tokenizer.rs": "06e5ade1938b1b8c9c601d5ede51b903eeaa518a43670a7d4ed7655a711e84f0"
+    },
+    "important_path_fact": "The historical default already used bf16_matvec_buffer -> bf16_matvec_many_buffer with a one-matrix slice. Direct single-matvec dispatch was introduced later at 2026-08-09T18:58:42.372Z and was not part of the 4.607 run."
+  },
+  "reconstruction": {
+    "historical_execution_path": "The source replay reaches the exact pre-SI-004 tree; no source regression was found between that tree and the current tracked Rust/Cargo source.",
+    "direct_dispatch_control": {
+      "introduced_utc": "2026-08-09T18:58:42.372Z",
+      "relation": "Later post-run experiment, not a historical fix",
+      "decode_tok_s": 2.718,
+      "total_tok_s": 2.716,
+      "peak_metal_mib": 1540,
+      "repetition_outputs_match": true
+    },
+    "replay_command": "target/release/si-bench --model models/qwen3-4b-base --backend metal-streaming --prompt 'Explain why memory paging is useful for local model inference.' --max-tokens 128 --context 2048 --warmup 1 --repetitions 3 --retain-layers 8 --output json",
+    "post_reconstruction_control": {
+      "decode_tok_s": 1.880,
+      "total_tok_s": 1.906,
+      "prefill_tok_s": 2.229,
+      "peak_metal_mib": 1540,
+      "peak_rss_mib": 68,
+      "rebuilt_binary_sha256": "9403c675e1ea1b2f55fa9961f8b693a577475715b12d1c81c57315b09aa11781",
+      "repetition_outputs_match": true
+    },
+    "interpretation": "The exact historical source version is recovered and matches the current tracked source. The current control does not reproduce historical throughput, so the remaining difference is runtime-machine state or an unpreserved executable/build-environment detail, not an identified source regression."
+  }
+}

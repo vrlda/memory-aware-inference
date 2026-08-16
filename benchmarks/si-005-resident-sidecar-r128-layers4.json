@@ -1,0 +1,182 @@
+{
+  "experiment": "resident-layer-low-rank-sidecar",
+  "model": "models/qwen3-4b-base",
+  "trace_files": [
+    "benchmarks/si-005-resident-drafter-layers4-hello-2026-08-10.jsonl"
+  ],
+  "records": 128,
+  "train_records": 102,
+  "holdout_records": 26,
+  "rank": 102,
+  "ridge": 0.01,
+  "target_representation": "model.norm(target_hidden)",
+  "sidecar_bytes": 33410062,
+  "binary_path": "benchmarks/si-005-resident-sidecar-r128-layers4.sisc",
+  "binary_bytes": 63652376,
+  "build_vocab_projection_seconds": 0.7831521660000007,
+  "score_ms_per_holdout": 0.2701714615384641,
+  "holdout_sidecar_top1_accuracy": 1.0,
+  "holdout_target_top1_in_sidecar_top4": 1.0,
+  "holdout_target_top4_overlap": 1.0,
+  "proposal_only": true,
+  "exact_target_unchanged": true,
+  "promotion": "coverage_probe_only",
+  "sidecar_top4": [
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      20972,
+      13,
+      7351
+    ],
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      198,
+      13,
+      16
+    ],
+    [
+      15,
+      13,
+      198,
+      16
+    ],
+    [
+      15,
+      198,
+      220,
+      13
+    ],
+    [
+      15,
+      220,
+      198,
+      13
+    ],
+    [
+      15,
+      220,
+      198,
+      13
+    ],
+    [
+      15,
+      13,
+      198,
+      16
+    ],
+    [
+      15,
+      13,
+      198,
+      220
+    ],
+    [
+      15,
+      198,
+      220,
+      13
+    ],
+    [
+      15,
+      13,
+      220,
+      198
+    ],
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      220,
+      198,
+      13
+    ],
+    [
+      15,
+      198,
+      13,
+      16
+    ],
+    [
+      15,
+      198,
+      13,
+      16
+    ],
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      13,
+      16,
+      198
+    ],
+    [
+      15,
+      198,
+      13,
+      220
+    ],
+    [
+      15,
+      220,
+      198,
+      13
+    ],
+    [
+      15,
+      13,
+      198,
+      16
+    ],
+    [
+      15,
+      220,
+      198,
+      13
+    ],
+    [
+      15,
+      220,
+      198,
+      13
+    ],
+    [
+      15,
+      198,
+      13,
+      16
+    ]
+  ]
+}

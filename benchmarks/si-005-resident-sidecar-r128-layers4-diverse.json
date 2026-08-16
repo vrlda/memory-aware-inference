@@ -1,0 +1,195 @@
+{
+  "experiment": "resident-layer-low-rank-sidecar",
+  "model": "models/qwen3-4b-base",
+  "trace_files": [
+    "benchmarks/si-005-resident-drafter-layers4-diverse-clean-2026-08-10.jsonl",
+    "benchmarks/si-005-resident-drafter-layers4-quality-2026-08-10.jsonl"
+  ],
+  "records": 138,
+  "train_records": 110,
+  "holdout_records": 28,
+  "rank": 110,
+  "ridge": 0.01,
+  "target_representation": "model.norm(target_hidden)",
+  "sidecar_bytes": 36004878,
+  "binary_path": "benchmarks/si-005-resident-sidecar-r128-layers4-diverse.sisc",
+  "binary_bytes": 68596248,
+  "build_vocab_projection_seconds": 0.883294375,
+  "score_ms_per_holdout": 0.35404314285714905,
+  "holdout_sidecar_top1_accuracy": 0.21428571428571427,
+  "holdout_target_top1_in_sidecar_top4": 0.35714285714285715,
+  "holdout_target_top4_overlap": 0.6785714285714286,
+  "proposal_only": true,
+  "exact_target_unchanged": true,
+  "promotion": "coverage_probe_only",
+  "sidecar_top4": [
+    [
+      4083,
+      10050,
+      3215,
+      85
+    ],
+    [
+      16,
+      17,
+      220,
+      20
+    ],
+    [
+      429,
+      323,
+      916,
+      320
+    ],
+    [
+      1657,
+      1293,
+      3041,
+      646
+    ],
+    [
+      374,
+      382,
+      16819,
+      11
+    ],
+    [
+      931,
+      1499,
+      63,
+      27
+    ],
+    [
+      17,
+      16,
+      18,
+      20
+    ],
+    [
+      11,
+      8063,
+      220,
+      13
+    ],
+    [
+      1602,
+      4185,
+      14762,
+      1352
+    ],
+    [
+      374,
+      11,
+      646,
+      304
+    ],
+    [
+      7486,
+      11312,
+      1565,
+      40518
+    ],
+    [
+      220,
+      198,
+      320,
+      264
+    ],
+    [
+      198,
+      220,
+      3550,
+      4185
+    ],
+    [
+      11,
+      26507,
+      323,
+      4583
+    ],
+    [
+      13,
+      11,
+      1618,
+      198
+    ],
+    [
+      4083,
+      10050,
+      85,
+      1149
+    ],
+    [
+      3197,
+      3555,
+      576,
+      758
+    ],
+    [
+      264,
+      279,
+      458,
+      198
+    ],
+    [
+      15,
+      13,
+      16,
+      17
+    ],
+    [
+      220,
+      304,
+      198,
+      330
+    ],
+    [
+      358,
+      279,
+      220,
+      429
+    ],
+    [
+      279,
+      11,
+      429,
+      264
+    ],
+    [
+      198,
+      320,
+      220,
+      323
+    ],
+    [
+      0,
+      63,
+      20703,
+      28587
+    ],
+    [
+      220,
+      198,
+      264,
+      279
+    ],
+    [
+      198,
+      304,
+      1172,
+      1083
+    ],
+    [
+      576,
+      3555,
+      220,
+      362
+    ],
+    [
+      11,
+      13,
+      553,
+      8063
+    ]
+  ]
+}

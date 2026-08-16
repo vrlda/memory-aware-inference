@@ -1,0 +1,33 @@
+{
+  "spec": "SI-004",
+  "experiment": "exact-output-head-block-index",
+  "date": "2026-08-10",
+  "model": "Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "device": "Apple M3 Pro",
+  "backend": "metal-streaming",
+  "target_retain_layers": 8,
+  "block_rows": 256,
+  "contract": "exact greedy argmax over original BF16 output rows",
+  "canonical_smoke": {
+    "prompt": "Explain why memory paging is useful for local model inference.",
+    "max_tokens": 32,
+    "warmup": 0,
+    "repetitions": 1,
+    "decode_tok_s": 3.481,
+    "total_tok_s": 3.482,
+    "peak_vram_mib": 1540,
+    "peak_ram_mib": 1993,
+    "greedy_ids_match_target_only_reference": true
+  },
+  "head_probe": {
+    "blocks_total": 594,
+    "blocks_evaluated": 593,
+    "rows_total": 151936,
+    "rows_evaluated": 151808
+  },
+  "si001_baseline_decode_tok_s": 4.607,
+  "si001_baseline_peak_vram_mib": 1540,
+  "promotion": "rejected",
+  "interpretation": "Contiguous block centroids have radii too broad to prune Qwen3's vocabulary: almost every block is evaluated. The exact index adds dispatch overhead and pushes RSS close to 2 GiB without a throughput win. It remains an opt-in diagnostic, not a promoted path."
+}

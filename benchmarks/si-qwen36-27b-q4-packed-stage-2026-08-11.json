@@ -1,0 +1,35 @@
+{
+  "model_path": "models/qwen3.6-27b-q4_k_m/Qwen3.6-27B-Q4_K_M.gguf",
+  "model_revision": "Qwen3.6-27B",
+  "format": "GGUF Q4_K_M",
+  "hardware": "Apple M3 Pro, 19.3 GB unified memory",
+  "prompt": "Hello",
+  "generated_tokens": 16,
+  "backend": "metal-streaming",
+  "experimental_controls": [
+    "SI_STAGE_PIPELINE=1",
+    "SI_STAGE_DEPTH=3 (default)",
+    "SI_STAGE_OUTPUT_PREFETCH=1",
+    "SI_RETAIN_MLP_STRIDE=4",
+    "SI_RETAIN_MLP_OFFSET=1",
+    "--retain-output-head",
+    "packed contiguous layer runs"
+  ],
+  "decode_tok_s": 0.288,
+  "total_tok_s": 0.290,
+  "peak_metal_mib": 2527,
+  "peak_rss_mib": 3746,
+  "mapped_model_bytes": 16817244384,
+  "active_weight_bytes": 2747535360,
+  "kv_bytes": 163184640,
+  "generated_token_ids": [548, 108, 233, 220, 121447, 1076, 33237, 96617, 179939, 251, 8087, 100386, 114197, 4401, 48561, 102635],
+  "repetition_outputs_match": true,
+  "short_smoke_peak": {
+    "generated_tokens": 8,
+    "decode_tok_s": 0.321,
+    "total_tok_s": 0.319,
+    "peak_metal_mib": 2527,
+    "peak_rss_mib": 2986
+  },
+  "notes": "Packed layer staging groups nearby GGUF payloads into shared anonymous runs, reducing per-tensor allocations and reads. This is a 16-token validation, not the 128-token canonical run."
+}

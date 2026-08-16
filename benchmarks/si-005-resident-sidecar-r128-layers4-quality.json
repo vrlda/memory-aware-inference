@@ -1,0 +1,122 @@
+{
+  "experiment": "resident-layer-low-rank-sidecar",
+  "model": "models/qwen3-4b-base",
+  "trace_files": [
+    "benchmarks/si-005-resident-drafter-layers4-quality-2026-08-10.jsonl"
+  ],
+  "records": 80,
+  "train_records": 64,
+  "holdout_records": 16,
+  "rank": 64,
+  "ridge": 0.01,
+  "target_representation": "model.norm(target_hidden)",
+  "sidecar_bytes": 21084686,
+  "binary_path": "benchmarks/si-005-resident-sidecar-r128-layers4-quality.sisc",
+  "binary_bytes": 40168984,
+  "build_vocab_projection_seconds": 0.6410074580000007,
+  "score_ms_per_holdout": 0.4194479375000393,
+  "holdout_sidecar_top1_accuracy": 0.1875,
+  "holdout_target_top1_in_sidecar_top4": 0.4375,
+  "holdout_target_top4_overlap": 0.625,
+  "proposal_only": true,
+  "exact_target_unchanged": true,
+  "promotion": "coverage_probe_only",
+  "sidecar_top4": [
+    [
+      63,
+      28587,
+      508,
+      220
+    ],
+    [
+      1602,
+      1661,
+      5390,
+      2699
+    ],
+    [
+      264,
+      279,
+      198,
+      458
+    ],
+    [
+      11,
+      8063,
+      220,
+      13
+    ],
+    [
+      8063,
+      220,
+      5086,
+      35844
+    ],
+    [
+      358,
+      220,
+      429,
+      279
+    ],
+    [
+      59528,
+      22,
+      785,
+      1249
+    ],
+    [
+      16,
+      15,
+      17,
+      18
+    ],
+    [
+      4083,
+      10050,
+      11312,
+      3215
+    ],
+    [
+      11,
+      8063,
+      220,
+      553
+    ],
+    [
+      11,
+      279,
+      264,
+      13
+    ],
+    [
+      15,
+      13,
+      16,
+      1635
+    ],
+    [
+      304,
+      198,
+      323,
+      311
+    ],
+    [
+      220,
+      279,
+      198,
+      264
+    ],
+    [
+      54916,
+      3039,
+      11,
+      8063
+    ],
+    [
+      304,
+      311,
+      198,
+      11
+    ]
+  ]
+}

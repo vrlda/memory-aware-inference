@@ -1,0 +1,36 @@
+{
+  "name": "SI-001 retain-8 canonical lock",
+  "status": "frozen-reference",
+  "model": {
+    "path": "models/qwen3-4b-base",
+    "revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+    "manifest_sha256": "2628031684d9cf5259629b7103532d6f4ef2a532e638afc351cb34d8d6331a84"
+  },
+  "command": "target/release/si-bench --model models/qwen3-4b-base --backend metal-streaming --prompt 'Explain why memory paging is useful for local model inference.' --max-tokens 128 --context 2048 --warmup 1 --repetitions 3 --retain-layers 8 --output json",
+  "reference_artifact": {
+    "path": "benchmarks/si-001-qwen3-4b-metal-streaming-mmap-retain8-canonical-2026-08-09.json",
+    "sha256": "c27924d5f2718838290341d91376e8eb4f23d1bc68f0127f7cb93a23ec16df44"
+  },
+  "reference_result": {
+    "decode_tok_s": 4.607,
+    "total_tok_s": 4.624,
+    "peak_vram_mib": 1540,
+    "peak_ram_mib": 576,
+    "repetition_outputs_match": true
+  },
+  "promotion_gates": {
+    "weights": "original BF16 Safetensors; no model transformation",
+    "greedy_ids": "must match the reference generated_token_ids",
+    "metal_peak_mib": "<= 1600",
+    "performance": "must be evaluated against the frozen command with three repetitions",
+    "diagnostics": "SI_PROFILE_RESOURCES=1 is allowed for analysis but is not part of the timed command"
+  },
+  "working_tree_hashes_after_diagnostics": {
+    "Cargo.toml": "081aac801296f7c0b8a5f25b0dfecb82dff28be44067fd9be91faa0919cba52c",
+    "Cargo.lock": "dcd58906676dd80fbe217b91963393b7592ca856b38b1fb3d2250f259150df99",
+    "src/metal.rs": "77a1dcb436787b7de7d9e523035225f61109502b94614ec4982eadb646f4895f",
+    "src/runtime.rs": "9fd5697251f9a8e63021a012f68927b93ace2a49129f7e66ed9cc3c0eaaf729a",
+    "src/telemetry.rs": "7911c0f13d41264cdfbc9ef17a43e31c9a7dd6adcfc604fbbf3386a50f20171a"
+  },
+  "stability_note": "The 4.607 reference is preserved as the historical SI-001 result. Current diagnostics show that mapped-weight page-ins and Metal wait time vary between launches; no optimization is promoted until it is compared with this frozen reference under the same command and output-ID gate."
+}

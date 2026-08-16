@@ -1,0 +1,25 @@
+{
+  "spec": "SI-004",
+  "experiment": "exact-batched-target-forward",
+  "date": "2026-08-09",
+  "model": "Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "device": "Apple M3 Pro",
+  "prompt": "Hello",
+  "prompt_tokens": 1,
+  "source_weights": "original BF16 Safetensors",
+  "warmup": 0,
+  "repetitions": 1,
+  "residency": "streaming mmap; no retention, chunking, or staging",
+  "verify_many_smoke": {"candidate_count": 2, "accepted_tokens": 1, "next_token": 358, "committed_cache_tokens": 2},
+  "results": [
+    {"batch": 1, "separate_ms": 473.208, "batched_ms": 1124.009, "speedup": 0.421, "separate_tok_s": 2.113, "batched_tok_s": 0.890, "max_abs_diff": 0.000000, "greedy_ids_match": true},
+    {"batch": 2, "separate_ms": 1090.026, "batched_ms": 1066.095, "speedup": 1.022, "separate_tok_s": 1.835, "batched_tok_s": 1.876, "max_abs_diff": 0.000012, "greedy_ids_match": true},
+    {"batch": 4, "separate_ms": 1757.557, "batched_ms": 1082.654, "speedup": 1.623, "separate_tok_s": 2.276, "batched_tok_s": 3.695, "max_abs_diff": 0.000017, "greedy_ids_match": true},
+    {"batch": 8, "separate_ms": 3556.866, "batched_ms": 1232.768, "speedup": 2.885, "separate_tok_s": 2.249, "batched_tok_s": 6.489, "max_abs_diff": 0.000017, "greedy_ids_match": true}
+  ],
+  "correctness": "Candidate logits matched greedy IDs for every batch; maximum absolute logit difference was 1.7e-5. verify_many smoke accepted one candidate and committed the cache to token position 2.",
+  "memory_note": "This probe did not capture canonical peak Metal/RSS and is not a promotion run.",
+  "command": "target/release/si-verify-many-probe --model models/qwen3-4b-base --verify-manifest --prompt Hello --warmup 0 --repetitions 1",
+  "interpretation": "The full batched target forward is a structural win at K=4/K=8 even before lookahead acceptance or fused batched QKV/gate-up kernels. K=1/K=2 are currently slower and require follow-up tuning."
+}

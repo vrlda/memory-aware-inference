@@ -1,0 +1,36 @@
+{
+  "model_path": "models/qwen3-4b-base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "device": "Apple M3 Pro",
+  "prompt": "Explain why memory paging is useful for local model inference.",
+  "generated_tokens": 32,
+  "target_retain_layers": 8,
+  "cache_pool": {
+    "width": 8,
+    "iterations": 1,
+    "decode_tok_s": 1.772,
+    "peak_vram_mib": 1544,
+    "peak_ram_mib": 1677,
+    "accepted_tokens_per_pass": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "greedy_ids_match": true
+  },
+  "adaptive_width": {
+    "width": 2,
+    "iterations": 1,
+    "decode_tok_s": 1.965,
+    "peak_vram_mib": 1541,
+    "peak_ram_mib": 1567,
+    "greedy_ids_match": true
+  },
+  "cpu_ngram_drafter": {
+    "order": 8,
+    "width": 8,
+    "decode_tok_s": 1.711,
+    "peak_vram_mib": 1544,
+    "peak_ram_mib": 1780,
+    "accepted_tokens_per_pass": [2, 1, 1, 1, 1, 1, 1, 3],
+    "greedy_ids_match": true
+  },
+  "si001_baseline_decode_tok_s": 4.607,
+  "promotion": "rejected"
+}

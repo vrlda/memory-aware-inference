@@ -1,0 +1,20 @@
+{
+  "spec": "SI-005",
+  "experiment": "resident-layer-drafter-trace",
+  "date": "2026-08-10",
+  "model": "Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "device": "Apple M3 Pro",
+  "layers": 8,
+  "prompt": "Explain why memory paging is useful for local model inference.",
+  "records": 128,
+  "hidden_size": 2560,
+  "labels": "exact untouched-target top-1 and top-4 IDs plus exact target final hidden state",
+  "trace_format": "JSONL header plus prefix and exact target hidden-state records per target position",
+  "trace_bytes": 7068752,
+  "trace_sha256": "e3cff105559f842b1ef46ef50306c7c8dce5693b156db41541da2bc14021aab4",
+  "elapsed_ms": 29742.903,
+  "target_unchanged": true,
+  "promotion": "trace_only",
+  "interpretation": "The retained-prefix hidden-state seam is operational and pairs layer-8 states with exact target labels without running the partial drafter's full vocabulary head during prompt preparation. This is a data-collection control, not yet a candidate drafter or throughput claim."
+}

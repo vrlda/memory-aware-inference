@@ -1,0 +1,22 @@
+{
+  "spec": "SI-005",
+  "experiment": "resident-layer-drafter-trace-suite",
+  "date": "2026-08-10",
+  "model": "Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "device": "Apple M3 Pro",
+  "layers": 8,
+  "total_records": 250,
+  "prompts": [
+    {"name": "canonical", "records": 128, "file": "si-005-resident-drafter-canonical-2026-08-10.jsonl", "sha256": "e3cff105559f842b1ef46ef50306c7c8dce5693b156db41541da2bc14021aab4"},
+    {"name": "water", "records": 16, "file": "si-005-resident-drafter-water-2026-08-10.jsonl", "sha256": "dadab39e45236999863854ff134df33a8b8b60e92279cf181fa5fca9b2cf123a"},
+    {"name": "arithmetic", "records": 16, "file": "si-005-resident-drafter-arithmetic-2026-08-10.jsonl", "sha256": "4203973be4d8a0eb8a6979852007682e651dfa6f3eb761f1f6f192f81b2546d2"},
+    {"name": "rust", "records": 16, "file": "si-005-resident-drafter-rust-2026-08-10.jsonl", "sha256": "1eaac312bb9c514a3b84ea7299e24703bb940248b2d65840a793be4a367812ed"},
+    {"name": "memory", "records": 16, "file": "si-005-resident-drafter-memory-2026-08-10.jsonl", "sha256": "0d5e069176eafd4b0c472dbebef7070c2163e35e1441a6e9beb4174d4b2dca4e"},
+    {"name": "quality", "records": 58, "file": "si-005-resident-drafter-quality-clean-2026-08-10.jsonl", "sha256": "7456583672e2369d685441d48e5dbe92453bbc28ddad18346707e8c83610f95d"}
+  ],
+  "labels": "exact untouched-target top-1 and top-4 IDs plus exact target final hidden state",
+  "target_unchanged": true,
+  "promotion": "trace_only",
+  "interpretation": "This diverse trace suite is ready for sidecar training and held-out coverage measurement. It does not claim speculative proposal quality or throughput by itself."
+}

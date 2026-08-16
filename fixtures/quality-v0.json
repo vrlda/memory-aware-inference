@@ -1,0 +1,41 @@
+{
+  "suite": "si-quality-v0",
+  "version": 1,
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "tokenizer_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "generation": {"temperature": 0.0, "sampling": false, "max_new_tokens": 128},
+  "likelihood": [
+    {"id": "likelihood-01", "text": "The Earth completes one orbit around the Sun in approximately one year."},
+    {"id": "likelihood-02", "text": "Water freezes at zero degrees Celsius under standard atmospheric pressure."},
+    {"id": "likelihood-03", "text": "A binary tree stores each node with at most two child nodes."},
+    {"id": "likelihood-04", "text": "Rust ownership rules prevent multiple mutable references to the same value."},
+    {"id": "likelihood-05", "text": "The Pacific Ocean is larger than the Atlantic Ocean."},
+    {"id": "likelihood-06", "text": "A prime number greater than two is odd."},
+    {"id": "likelihood-07", "text": "Функция принимает аргумент и возвращает вычисленный результат."},
+    {"id": "likelihood-08", "text": "Una función recibe argumentos y devuelve un resultado calculado."},
+    {"id": "likelihood-09", "text": "A square matrix has the same number of rows and columns."},
+    {"id": "likelihood-10", "text": "HTTP status code 404 means that a requested resource was not found."},
+    {"id": "likelihood-11", "text": "The sum of the angles in a Euclidean triangle is one hundred eighty degrees."},
+    {"id": "likelihood-12", "text": "A queue removes elements in first-in, first-out order."}
+  ],
+  "structured_completion": [
+    {"id": "completion-01", "category": "factual", "prompt": "The chemical formula for water is", "criterion": {"type": "contains", "value": "H2O"}},
+    {"id": "completion-02", "category": "factual", "prompt": "The capital city of Japan is", "criterion": {"type": "contains", "value": "Tokyo"}},
+    {"id": "completion-03", "category": "arithmetic", "prompt": "Seven multiplied by eight equals", "criterion": {"type": "contains", "value": "56"}},
+    {"id": "completion-04", "category": "arithmetic", "prompt": "The square root of 81 is", "criterion": {"type": "contains", "value": "9"}},
+    {"id": "completion-05", "category": "code", "prompt": "In Python, len([10, 20, 30]) returns", "criterion": {"type": "contains", "value": "3"}},
+    {"id": "completion-06", "category": "code", "prompt": "In Rust, a vector is created with the macro", "criterion": {"type": "contains", "value": "vec!"}},
+    {"id": "completion-07", "category": "multilingual", "prompt": "The Russian word for hello is", "criterion": {"type": "contains_any", "values": ["привет", "Привет"]}},
+    {"id": "completion-08", "category": "multilingual", "prompt": "The Spanish word for house is", "criterion": {"type": "contains", "value": "casa"}},
+    {"id": "completion-09", "category": "factual", "prompt": "The opposite of north is", "criterion": {"type": "contains", "value": "south"}},
+    {"id": "completion-10", "category": "arithmetic", "prompt": "Twelve divided by three equals", "criterion": {"type": "contains", "value": "4"}},
+    {"id": "completion-11", "category": "code", "prompt": "The JSON value for true is written as", "criterion": {"type": "contains", "value": "true"}},
+    {"id": "completion-12", "category": "factual", "prompt": "The first month of the year is", "criterion": {"type": "contains", "value": "January"}}
+  ],
+  "regression_prompts": [
+    {"id": "regression-01", "prompt": "Complete this sentence: A careful benchmark should"},
+    {"id": "regression-02", "prompt": "fn add(a: i32, b: i32) -> i32 {"},
+    {"id": "regression-03", "prompt": "Memory paging can reduce fast-memory residency by"},
+    {"id": "regression-04", "prompt": "Explain why a queue is useful for"}
+  ]
+}

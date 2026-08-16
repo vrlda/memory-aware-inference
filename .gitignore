@@ -1,0 +1,15 @@
+# Local model and build artifacts
+target/
+models/
+*.gguf
+*.safetensors
+*.safetensors.index.json
+
+# Local/editor/system files
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Large generated sidecar tensors; JSON/JSONL benchmark metadata remains tracked.
+benchmarks/*.npz
+benchmarks/*.sisc

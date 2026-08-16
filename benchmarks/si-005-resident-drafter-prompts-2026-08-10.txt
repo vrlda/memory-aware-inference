@@ -1,0 +1,29 @@
+The Earth completes one orbit around the Sun in approximately one year.
+Water freezes at zero degrees Celsius under standard atmospheric pressure.
+A binary tree stores each node with at most two child nodes.
+Rust ownership rules prevent multiple mutable references to the same value.
+The Pacific Ocean is larger than the Atlantic Ocean.
+A prime number greater than two is odd.
+Функция принимает аргумент и возвращает вычисленный результат.
+Una función recibe argumentos y devuelve un resultado calculado.
+A square matrix has the same number of rows and columns.
+HTTP status code 404 means that a requested resource was not found.
+The sum of the angles in a Euclidean triangle is one hundred eighty degrees.
+A queue removes elements in first-in, first-out order.
+The chemical formula for water is
+The capital city of Japan is
+Seven multiplied by eight equals
+The square root of 81 is
+In Python, len([10, 20, 30]) returns
+In Rust, a vector is created with the macro
+The Russian word for hello is
+The Spanish word for house is
+The opposite of north is
+Twelve divided by three equals
+The JSON value for true is written as
+The first month of the year is
+Complete this sentence: A careful benchmark should
+fn add(a: i32, b: i32) -> i32 {
+Memory paging can reduce fast-memory residency by
+Explain why a queue is useful for
+Explain why memory paging is useful for local model inference.
